@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     collection do
       get :draft         # ドラフト一覧
       post :generate_gemini # Gemini生成ボタンのPOST
+      post 'bulk_update_drafts'
     end
     member do
       patch :approve

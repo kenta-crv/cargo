@@ -1,14 +1,25 @@
 .section-knowhow
-  .container
-    h1.section-title ドラフト一覧（Gemini生成）
+ .container
+  h1.section-title ドラフト一覧（Gemini生成）
 
-    - if @columns.empty?
-      p まだドラフトはありません
-      = link_to "Geminiで生成", generate_gemini_columns_path, method: :post, class: "btn btn-primary"
-    - else
+- if @columns.empty?
+    p まだドラフトはありません
+    = link_to "Geminiで生成", generate_gemini_columns_path, method: :post, class: "btn btn-primary"
+- else
+    / ここからフォーム開始。一括処理をPOSTリクエストで送る
+    = form_with(url: bulk_update_drafts_columns_path, method: :post, local: true) do |form|
+      / --- 一括操作ボタン群をテーブルの上に配置 ---
+      .d-flex.justify-content-start.mb-3
+        = form.button "選択をChat GPTに依頼", name: "action_type", value: "approve_bulk", class: "btn btn-dark me-2", data: { confirm: "選択されたドラフトの一括承認を実行しますか？" }
+        = form.button "選択を削除", name: "action_type", value: "delete_bulk", class: "btn btn-danger", data: { confirm: "選択されたドラフトを一括削除しますか？" }
+      / --- ここまでボタン群 ---
+
       table.table
         thead
           tr
+            th.text-center
+              / 全選択用のチェックボックス
+              = check_box_tag "select_all", "1", false, class: "form-check-input", onclick: "toggleAll(this)"
             th タイトル
             th 説明
             th キーワード
@@ -16,9 +27,35 @@
         tbody
           - @columns.each do |column|
             tr
+              td.text-center
+                / 各行のチェックボックス。nameは配列として送信されるようにする
+                = check_box_tag "column_ids[]", column.id, false, class: "form-check-input column-checkbox"
               td = column.title
               td = truncate(strip_tags(column.description), length: 80)
               td = column.keyword
+              /td.toc-preview
+                / 目次表示ロジックは省略
+                - if column.body.present?
+                  ul.list-unstyled.text-sm
+                    - column.body.each_line.grep(/^#+\s/).take(5).each do |line|
+                      - level = line.count('#')
+                      - text = line.gsub(/^#+\s*/, '').strip
+                      li style="margin-left: #{(level - 2) * 0.75}rem; font-size: 0.8rem;"
+                        = text.truncate(40)
+                    - if column.body.each_line.grep(/^#+\s/).count > 5
+                      span.text-muted.text-xs ...他#{column.body.each_line.grep(/^#+\s/).count - 5}項目
+                - else
+                  span.text-muted 本文未生成
               td
+                / 個別操作は残しておく
                 = button_to "GhatGPT", approve_column_path(column), method: :patch, class: "btn btn-dark btn-sm"
                 = button_to "Delete", column_path(column), method: :delete, data: {confirm: "削除しますか？"}, class: "btn btn-danger btn-sm"
+
+    / JavaScriptで全選択/全解除の機能を追加
+    javascript:
+      function toggleAll(source) {
+        checkboxes = document.querySelectorAll('.column-checkbox');
+        for (var i = 0; i < checkboxes.length; i++) {
+          checkboxes[i].checked = source.checked;
+        }
+      }

@@ -71,3 +71,4 @@ gem 'meta-tags'
 
 gem 'httparty'      # API呼び出し用
 gem 'dotenv-rails', groups: [:development, :test] # .env 管理
+gem 'kramdown'
