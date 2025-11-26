@@ -11,10 +11,13 @@ Rails.application.routes.draw do
     collection do
       get :draft         # ドラフト一覧
       post :generate_gemini # Gemini生成ボタンのPOST
-      post 'bulk_update_drafts'
+      match 'bulk_update_drafts', via: [:post, :patch]
     end
     member do
       patch :approve
     end
   end
+
+  require 'sidekiq/web'
+  mount Sidekiq::Web, at: "/sidekiq"
 end

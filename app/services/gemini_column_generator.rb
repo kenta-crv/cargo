@@ -9,7 +9,7 @@ class GeminiColumnGenerator
 
   def self.generate_columns(batch_count: 100)
     batch_count.times do
-      prompt = "軽貨物配送サービスに関する、**企業の実務に役立つ戦略的な視点**を持つブログ記事のテーマ、記事概要、SEOキーワード、およびカテゴリを日本語で生成してください。ただし、**毎回の生成で、既存のアイデアと異なる、多様な視点のテーマ**を最優先で考案してください。テーマは、業界のトレンド、軽貨物の取引メリット、ドライバーの働き方、企業のコスト削減戦略など、**幅広い分野を網羅的に含めること**。"
+      prompt = "軽貨物配送サービスに関するブログ記事のテーマ、記事概要、SEOキーワード、およびカテゴリを日本語で生成してください。求職者に向けた発信ではありません。"
 
       response_json_string = post_to_gemini(prompt)
       next unless response_json_string

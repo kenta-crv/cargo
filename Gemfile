@@ -70,5 +70,16 @@ gem 'omniauth-twitter'
 gem 'meta-tags'
 
 gem 'httparty'      # API呼び出し用
-gem 'dotenv-rails', groups: [:development, :test] # .env 管理
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'kramdown'
+
+# Gemfile
+
+# 非同期処理ライブラリ
+gem 'sidekiq' 
+
+# Sidekiqで定期実行を実現するライブラリ
+gem 'sidekiq-cron' 
+
+# MarkdownをHTMLに変換するためのライブラリ (ColumnsControllerで使用)
 gem 'kramdown'
