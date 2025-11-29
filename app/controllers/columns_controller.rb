@@ -114,7 +114,8 @@ def approve
   unless @column.approved?
     @column.update!(status: "approved")
   end
-  GenerateColumnBodyJob.perform_later(@column.id)
+  #GenerateColumnBodyJob.perform_later(@column.id)
+  GenerateColumnBodyJob.perform_now(@column.id)
   redirect_to columns_path, notice: "承認しました。本文生成を開始します。"
 end
 
@@ -138,7 +139,8 @@ end
         unless column.approved?
           column.update!(status: "approved")
           # 個別のジョブを発行
-          GenerateColumnBodyJob.perform_later(column.id)
+          #GenerateColumnBodyJob.perform_later(column.id)
+          GenerateColumnBodyJob.perform_now(column.id)
         end
       end
       redirect_to columns_path, notice: "#{columns.count}件のドラフトを承認し、本文生成を開始しました。"
