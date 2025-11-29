@@ -21,6 +21,9 @@
           .column-content
             h2.column-title
               = link_to column.title, column_path(column)
+              |  （更新日: 
+              = column.updated_at.strftime("%Y/%m/%d %H:%M")
+              | ）
             .column-description
               - if column.description.present?
                 = truncate(strip_tags(column.description), length: 120)
