@@ -1,6 +1,7 @@
 require "net/http"
 require "json"
 require "openssl"
+require 'openai'
 
 class GptArticleGenerator
   # 修正1: 1セクションあたりの目標文字数を300文字に調整。
