@@ -83,3 +83,5 @@ gem 'sidekiq-cron'
 
 # MarkdownをHTMLに変換するためのライブラリ (ColumnsControllerで使用)
 gem 'kramdown'
+
+gem 'openai'
