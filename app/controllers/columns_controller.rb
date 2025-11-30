@@ -94,7 +94,7 @@ end
   def generate_gemini
     # params[:batch]が渡されていればその値を使い、なければデフォルトの5を使う
     # params[:batch]は文字列なので、to_iで整数に変換して渡す
-    batch = params[:batch] || 100
+    batch = params[:batch] || 20
     created = GeminiColumnGenerator.generate_columns(batch_count: batch.to_i)
     # 実際に何件作成できたかはGeminiColumnGeneratorからは返されていないため、
     # ここでは仮にbatchの回数を使っている可能性があります。
