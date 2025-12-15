@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get 'security', to: 'tops#security'
   get 'construction', to: 'tops#construction'
   get 'cleaning', to: 'tops#cleaning'
+  get 'event', to: 'tops#event'
+  get 'logistics', to: 'tops#logistics'
   get 'recruit', to: 'tops#recruit'
   get 'app', to: 'tops#app'
   

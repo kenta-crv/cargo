@@ -1,0 +1,290 @@
+- set_meta_tags title: '物流スタッフ・軽作業請負なら『OK物流』'
+- set_meta_tags description: '倉庫・物流業務の業務請負・外注なら『OK物流』。軽作業・ピッキング・梱包など豊富な人材で全国対応可能。'
+
+section.hero-main-section.position-relative(style="background-image: url(#{asset_path('cleaning-image.png')});")
+  .container
+    .row.align-items-center.gy-4
+      .col-lg-6
+        .hero-main-left
+          .hero-main-top
+            button.hero-main-top-btn
+              | 物流・倉庫スタッフをお探しの企業様へ
+          h1.hero-main-title.mt-4
+            span.noto
+              | 物流現場を支える
+          h2.hero-main-subtitle.mt-3
+            span.noto
+              | 倉庫・物流スタッフ請負なら『OK物流』
+          .d-flex.align-items-center.mt-4.hero-main-badges.gap-3
+            button.hero-main-badge
+              | ✓ 即戦力スタッフ
+            p.hero-main-badge-text
+              | ピッキング・梱包・入出庫作業など経験者を手配
+          .d-flex.align-items-center.mt-4.hero-main-badges.gap-3
+            button.hero-main-badge
+              | ✓ 全国対応
+            p.hero-main-badge-text
+              | 全国の物流拠点・倉庫に対応可能
+          .d-flex.align-items-center.mt-4.hero-main-badges.gap-3
+            button.hero-main-badge
+              | ✓ 短期・スポットOK
+            p.hero-main-badge-text
+              | 繁忙期や一時的な作業も柔軟に対応
+      .col-lg-6
+        .hero-main-right.p-4.rounded-3
+          h3.hero-main-trial.text-center
+            | ＼まずはご相談ください！／
+          form#hero-main-form.hero-main-form.mt-3.p-4.rounded-3
+            .row.g-3
+              .col-12
+                label.form-label.hero-main-label
+                  | 会社名
+                  span.required-badge
+                    | 必須
+                input.form-control.hero-main-input[type="text" placeholder="株式会社〇〇〇〇" required=""]
+              .col-12
+                label.form-label.hero-main-label
+                  | お名前
+                  span.required-badge
+                    | 必須
+                input.form-control.hero-main-input[type="text" placeholder="山田太郎" required=""]
+              .col-12
+                label.form-label.hero-main-label
+                  | 会社のメールアドレス
+                  span.required-badge
+                    | 必須
+                input.form-control.hero-main-input[type="email" placeholder="test@example.com" required=""]
+              .col-12
+                label.form-label.hero-main-label
+                  | 電話番号
+                  span.required-badge
+                    | 必須
+                input.form-control.hero-main-input[type="tel" placeholder="050-1234-5678" required=""]
+              .col-12
+                button.btn.hero-main-submit.w-100[type="submit"]
+                  | まずは気軽に相談から
+  .hero-main-overlay
+
+section#service.japan-notyo-section
+  .japan-notyo-container
+    .japan-notyo-column.japan-notyo-text-column
+      h2.japan-notyo-heading
+        | 物流スタッフ請負の『OK物流』とは？
+      p.japan-notyo-description
+        | 『OK物流』は、倉庫・物流現場に特化したスタッフ請負サービスです。
+        br
+        | ピッキング・梱包・入出庫作業など経験豊富なスタッフを全国各地の拠点から手配可能。
+    .japan-notyo-column.japan-notyo-image-column
+      = image_tag "image.png", class: "japan-notyo-image", alt: "Tool illustration"
+
+section.jap-notto-section
+  .jap-notto-container
+    h2.jap-notto-heading
+      | こんなお悩みはありませんか？
+    .jap-notto-semicircle-wrapper
+      .jap-notto-image-container.jap-notto-image-1
+        = image_tag "mainn-1.png", class: "jap-notto-image", alt: "Issue 1"
+      .jap-notto-image-container.jap-notto-image-2
+        = image_tag "mainn-2.png", class: "jap-notto-image", alt: "Issue 2"
+      .jap-notto-image-container.jap-notto-image-3
+        = image_tag "mainn-3.png", class: "jap-notto-image", alt: "Issue 3"
+      .jap-notto-image-container.jap-notto-image-4
+        = image_tag "mainn-4.png", class: "jap-notto-image", alt: "Issue 4"
+      .jap-notto-image-container.jap-notto-image-5
+        = image_tag "mainn-5.png", class: "jap-notto-image", alt: "Issue 5"
+      .jap-notto-center-image
+        = image_tag "mainn-7.png", class: "jap-notto-center-img", alt: "Center Image"
+
+section#business.ser-mos-section[style="background-image: url('#{asset_path('bg-services.png')}');"]
+  .container.py-5.text-center
+    h2.ser-mos-title
+      | 物流スタッフ請負サービス内容
+    .ser-mos-panel.mx-auto.p-4.rounded-4
+      .row.g-4
+        .col-lg-6
+          article.ser-mos-card
+            .ser-mos-card-media
+              = image_tag "ser-cleaning1.png", class: "ser-mos-card-img", alt: "Service 1"
+            h3.ser-mos-card-title
+              | 倉庫内作業スタッフ手配
+            p.ser-mos-card-desc
+              | ピッキング・梱包・入出庫作業など、倉庫内作業スタッフを請負で手配します。
+        .col-lg-6
+          article.ser-mos-card
+            .ser-mos-card-media
+              = image_tag "ser-cleaning2.png", class: "ser-mos-card-img", alt: "Service 2"
+            h3.ser-mos-card-title
+              | 検品・仕分けスタッフ
+            p.ser-mos-card-desc
+              | 商品の検品や仕分け作業を経験豊富なスタッフで対応可能です。
+        .col-lg-6
+          article.ser-mos-card
+            .ser-mos-card-media
+              = image_tag "ser-cleaning3.png", class: "ser-mos-card-img", alt: "Service 3"
+            h3.ser-mos-card-title
+              | 入出庫管理スタッフ
+            p.ser-mos-card-desc
+              | 入庫・出庫作業の補助や管理を行うスタッフを手配します。
+        .col-lg-6
+          article.ser-mos-card
+            .ser-mos-card-media
+              = image_tag "ser-cleaning4.png", class: "ser-mos-card-img", alt: "Service 4"
+            h3.ser-mos-card-title
+              | 短期・大量動員
+            p.ser-mos-card-desc
+              | 繁忙期やキャンペーン時も柔軟に人材を確保できます。
+
+section.main-moss-section
+  .container.text-center.main-moss-header
+    h2.main-moss-title
+      | 物流現場を支える
+    h3.main-moss-subtitle
+      | 『OK物流』の強み
+  .container-fluid.main-moss-block
+    .row.align-items-center
+      .col-lg-6.text-center
+        = image_tag "main-cargo1.png", class: "main-moss-img img-fluid", alt: "Feature Image"
+      .col-lg-6.text-center.main-moss-content
+        h3.main-moss-block-title
+          | 経験豊富なスタッフを手配
+        p.main-moss-block-desc
+          | ピッキング・梱包・入出庫経験者を中心に、現場に合わせて最適なスタッフを手配します。
+  .container-fluid.main-moss-block
+    .row.align-items-center.flex-row-reverse
+      .col-lg-6.text-center
+        = image_tag "main-cargo2.png", class: "main-moss-img img-fluid", alt: "Feature Image"
+      .col-lg-6.text-center.main-moss-content
+        h3.main-moss-block-title
+          | 全国対応・短期・スポットOK
+        p.main-moss-block-desc
+          | 全国各地の倉庫・物流拠点に対応可能。短期・スポット依頼にも柔軟に対応します。
+  .container-fluid.main-moss-block
+    .row.align-items-center
+      .col-lg-6.text-center
+        = image_tag "main-cargo3.png", class: "main-moss-img img-fluid", alt: "Feature Image"
+      .col-lg-6.text-center.main-moss-content
+        h3.main-moss-block-title
+          | 多様な業務に対応
+        p.main-moss-block-desc
+          | ピッキング、梱包、検品、入出庫管理など幅広い作業に対応可能です。
+  .container-fluid.main-moss-block
+    .row.align-items-center.flex-row-reverse
+      .col-lg-6.text-center
+        = image_tag 'main-cleaning4.png', alt: 'Feature Image', class: 'main-moss-img img-fluid'
+      .col-lg-6.text-center.main-moss-content
+        h3.main-moss-block-title
+          | 地方の倉庫拠点も対応
+        p.main-moss-block-desc
+          | 地方の倉庫や物流現場でも、経験豊富なスタッフを手配し、スムーズな作業をサポートします。
+
+section.faq-japan-section.py-5
+  .container.text-center
+    h2.faq-japan-title.mb-5
+      | よくある質問
+    .faq-japan-container
+      .faq-japan-item
+        .faq-japan-question.d-flex.align-items-center.justify-content-between
+          p
+            | 対応可能なエリアはどこですか？
+          = image_tag "closee.png", class: "faq-japan-icon", alt: "toggle icon"
+        .faq-japan-answer
+          p
+            | 全国対応可能です。拠点により条件が異なりますのでご相談ください。
+      .faq-japan-item
+        .faq-japan-question.d-flex.align-items-center.justify-content-between
+          p
+            | 単日や短期の作業にも対応できますか？
+          = image_tag "closee.png", class: "faq-japan-icon", alt: "toggle icon"
+        .faq-japan-answer
+          p
+            | はい、短期・スポット作業にも柔軟に対応可能です。
+      .faq-japan-item
+        .faq-japan-question.d-flex.align-items-center.justify-content-between
+          p
+            | 何名から依頼できますか？
+          = image_tag "closee.png", class: "faq-japan-icon", alt: "toggle icon"
+        .faq-japan-answer
+          p
+            | 1名から大量人員まで、案件内容に応じて手配可能です。
+      .faq-japan-item
+        .faq-japan-question.d-flex.align-items-center.justify-content-between
+          p
+            | どんな業務経験者がいますか？
+          = image_tag "closee.png", class: "faq-japan-icon", alt: "toggle icon"
+        .faq-japan-answer
+          p
+            | ピッキング・梱包・入出庫・検品経験者など、幅広い物流作業スタッフが在籍しています。
+
+section#case.cards-moos-section.py-5
+  .container.text-center
+    h2.cards-moos-title.mb-5
+      | 導入事例
+    .row.g-4.cards-moos-row.d-none.d-md-flex
+      .col-lg-4.col-md-6
+        .cards-moos-card
+          = image_tag "image-security2.png", class: "cards-moos-img", alt: "Case Study 1"
+          h3.cards-moos-heading
+            | EC物流企業様
+          p.cards-moos-desc
+            | ピッキング・梱包スタッフを短期間で手配し、繁忙期の作業効率を向上しました。
+      .col-lg-4.col-md-6
+        .cards-moos-card
+          = image_tag "image-cleaning2.png", class: "cards-moos-img", alt: "Case Study 2"
+          h3.cards-moos-heading
+            | 物流倉庫運営会社様
+          p.cards-moos-desc
+            | 入出庫作業の経験者を手配し、倉庫運営を円滑に行うことができました。
+      .col-lg-4.col-md-6
+        .cards-moos-card
+          = image_tag "image-cleaning4.png", class: "cards-moos-img", alt: "Case Study 3"
+          h3.cards-moos-heading
+            | メーカー物流部門様
+          p.cards-moos-desc
+            | 商品検品・仕分けスタッフを手配し、作業精度と効率を向上しました。
+      .col-lg-4.col-md-6
+        .cards-moos-card
+          = image_tag "image-security4.png", class: "cards-moos-img", alt: "Case Study 4"
+          h3.cards-moos-heading
+            | 地方物流拠点企業様
+          p.cards-moos-desc
+            | 地方拠点でも迅速に人材を手配し、倉庫運営をサポートしました。
+
+section#inquiry
+  .container
+    .col-lg-12
+      .hero-main-right.p-4.rounded-3
+        h3.hero-main-trial2.text-center
+          | ＼まずはご相談ください！／
+        form#hero-main-form.hero-main-form.mt-3.p-4.rounded-3
+          .row.g-3
+            .col-12
+              label.form-label.hero-main-label
+                | 会社名 
+                span.required-badge
+                  | 必須
+              input.form-control.hero-main-input[type="text" placeholder="株式会社〇〇〇〇" required=""]
+            .col-12
+              label.form-label.hero-main-label
+                | お名前 
+                span.required-badge
+                  | 必須
+              input.form-control.hero-main-input[type="text" placeholder="山田太郎" required=""]
+            .col-12
+              label.form-label.hero-main-label
+                | 会社のメールアドレス 
+                span.required-badge
+                  | 必須
+              input.form-control.hero-main-input[type="email" placeholder="test@example.com" required=""]
+            .col-12
+              label.form-label.hero-main-label
+                | 電話番号 
+                span.required-badge
+                  | 必須
+              input.form-control.hero-main-input[type="tel" placeholder="050-1234-5678" required=""]
+            .col-12
+              button.btn.hero-main-submit.w-100[type="submit"]
+                | まずは気軽に相談から
+
+script[src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"]
+script[src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"]
+script[src="js/script.js"]
