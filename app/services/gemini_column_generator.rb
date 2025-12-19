@@ -6,7 +6,7 @@ class GeminiColumnGenerator
 
   GEMINI_API_KEY = ENV["GEMINI_API_KEY"]
   # 安定性の高い1.5-flashを使用
-  GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent"
+  GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent"
 
   GENRE_CONFIG = {
     cargo: {
@@ -76,7 +76,7 @@ class GeminiColumnGenerator
         
         if i < batch_count - 1
           puts "制限回避のため7秒待機します..."
-          sleep 7
+          sleep 15
         end
       end
     else
