@@ -119,6 +119,12 @@ class GeminiColumnGenerator
       ・#{config[:exclude]}ではありません
       ・売り込みすぎず、実務目線で分かりやすく
       ・記事の最後は「#{config[:service_brand]}（#{config[:service_path]}）では〜」という形で自然に締めてください
+      
+      keyword項目の制約：
+      ・SEOを意識したキーワードを3〜5個選定してください。
+      ・必ず「カンマ区切り」の形式で出力してください（例：キーワード1,キーワード2,キーワード3）。
+      ・文章や説明文は含めないでください。
+
       以下のJSON形式で出力してください。
     EOS
 
@@ -161,7 +167,10 @@ class GeminiColumnGenerator
           properties: {
             title:       { type: "string" },
             description: { type: "string" },
-            keyword:     { type: "string" }
+            keyword:     { 
+              type: "string",
+              description: "Comma-separated SEO keywords only."
+            }
           },
           required: %w[title description keyword]
         }
